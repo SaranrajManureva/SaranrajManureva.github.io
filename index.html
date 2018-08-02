@@ -51,12 +51,20 @@
           // BEAT MESSAGE END
         </script>
     
-    <div style="visibility:hidden"> 
- <audio controls autoplay loop>
-  <source src="ps.mp3" >
-  Your browser does not support the audio element.
-</audio>  
-</div>
+ <iframe src="ps.mp3" allow="autoplay" style="display:none" id="iframeAudio">
+</iframe> 
+ 
+
+<audio autoplay loop  id="playAudio">
+      <source src="ps.mp3">
+    </audio>
+ 
+<script>
+  var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+    if(!isChrome){
+      $('#iframeAudio').remove()
+    }
+	</script>
     
     
     
