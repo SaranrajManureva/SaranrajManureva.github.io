@@ -65,10 +65,27 @@
     </audio>
  
 <script>
-  var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+ /* var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
     if(!isChrome){
       $('#iframeAudio').remove()
+    }*/
+	$(document).ready(function(){
+    var ua = navigator.userAgent;
+
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(ua))
+    {
+      $('#iframeAudio').remove();
     }
+
+    else if(/Chrome/i.test(ua)){
+    }
+    else
+    {  $('#iframeAudio').remove();
+    }
+});
+	
+	
+	
 	</script>
     
     
